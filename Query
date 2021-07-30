@@ -1,6 +1,8 @@
-USE users; 
-
--- Query to get all of the houses in the “Uptown” neighborhood
-SELECT *
-FROM users u
-WHERE u.neighborhood = 'Upwtown';
+--find houses in uptown
+function findUptown() {
+  mongodb.connect.then(db => {
+    db.collection('users')
+      .find({ houses: { $neighborhood: uptown }})
+      .toArray((err, res) => result(err, res))
+  })
+}
