@@ -1,0 +1,6 @@
+USE users; 
+
+-- Query to get all of the houses in the “Uptown” neighborhood
+SELECT *
+FROM users u
+WHERE u.neighborhood = 'Upwtown';
